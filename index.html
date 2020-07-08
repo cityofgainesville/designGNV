@@ -62,6 +62,7 @@
       background-size: cover;
     }
 
+
 .bg-beta {
 	  background: #59B9DE;
 	}
@@ -110,9 +111,15 @@ a:visited{
 }
 
 .btn-participate {
-        background-color: #FF7C68 !important;
-        color: white !important;
-        align-content: left !important;
+    background-color: #FF7C68 !important;
+    color: black;
+    align-content: left !important;
+    }
+
+.btn-more {
+    background-color: #59B9DE !important;
+    color: black;
+    align-content: left !important;
     }
     
 .esther_pink {
@@ -172,6 +179,13 @@ a:visited{
     background: #FACE00;
     }
 
+.project_card {
+    background: white;    
+    }
+    
+.current_projects {
+    background: #FEE685;    
+    }
     
 .slidecaption {
      background-color: rgba(255, 255, 255, 0.9);
@@ -221,12 +235,20 @@ a:visited{
     width: 10rem;
     cursor: pointer;
     background-color: #FD7681;
-    color: white;
+    color: black;
+    }
+    
+.translatecardsm {
+    background-color: white; 
+    width: 85%;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     }
     
 .translatecard {
     background-color: white; 
-    width: 50%;
+    width: 40%;
     height: auto;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -335,6 +357,20 @@ nav-link {
   z-index: 2;
   cursor: pointer;
 }
+    
+#overlaysm {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
 
 #text{
   position: absolute;
@@ -345,7 +381,17 @@ nav-link {
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   background-color: white;
-
+}
+    
+#textsm{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  color: #005ea2;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  background-color: white;
 }
 </style>
     
@@ -379,6 +425,14 @@ function on() {
 function off() {
   document.getElementById("overlay").style.display = "none";
 }
+    
+function onsm() {
+  document.getElementById("overlaysm").style.display = "block";
+}
+
+function offsm() {
+  document.getElementById("overlaysm").style.display = "none";
+}
     </script>
 
 <body>
@@ -401,9 +455,16 @@ function off() {
 <li class="nav-item">
         <a class="nav-link" href="about.html">About DesignGNV</a>
       </li>
-    <li class="nav-item">
-    <a class="nav-link translatenav ml-auto" onclick="on()" >Translate</a>
+<div class="d-sm-none d-md-block">
+<li class="nav-item">
+    <a class="nav-link translatenav ml-auto" onclick="on()">Translate</a>
 </li>
+</div>
+<div class="d-sm-block d-md-none">
+<li class="nav-item">
+    <a class="nav-link translatenav ml-auto" onclick="onsm()">Translate</a>
+</li>
+</div>
 </ul>
 
 
@@ -414,33 +475,79 @@ function off() {
     
 
     <!-- Trigger/Open The Modal -->
+<div class="d-xs-none d-sm-none d-md-block">
 <div id="overlay" onclick="off()">
   <div class="card translatecard" id="text">
-    <div class="row ml-5 mr-5">
+    <div class="row ml-5 mr-5 text-center">
+      <div>
+          <h5 class="text-center">Select a language to translate the webpage</h5>
+          <p class="text-center">You will be directed to Google Translate</p>
+          <br>
+      </div>
+    </div>
+    <div class="row ml-5">
       <div class="col-sm">
           <a href="http://translate.google.com/translate?hl=en&sl=en&u=https://cityofgainesville.github.io/designGNV/about&tl=es" target="_blank">Spanish</a> <br><br>
-          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=fr&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2Fabout&sandbox=1" target="_blank">French</a> <br><br>
-          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=zh-CN&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2Fabout" target="_blank">Chinese</a> <br><br>
-          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=de&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2Fabout" target="_blank">German</a> <br><br>
-          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=pt&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2Fabout" target="_blank">Portuguese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=fr&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F&sandbox=1" target="_blank">French</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=zh-CN&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Chinese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=de&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">German</a> <br><br><br>
       </div>
       <div class="col-sm">
-          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=vi&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2Fabout" target="_blank">Vietnamese</a> <br><br>
-          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=it&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2Fabout" target="_blank">Italian</a> <br><br>
-          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=th&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2Fabout" target="_blank">Thai</a> <br><br>
-          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ru&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2Fabout" target="_blank">Russian</a> <br><br>
-          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ja&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2Fabout" target="_blank">Japanese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=de&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">German</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=pt&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Portuguese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=vi&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Vietnamese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=it&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Italian</a> <br><br><br>
+      </div>
+      <div class="col-sm">
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=th&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Thai</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ru&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Russian</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ja&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Japanese</a> <br><br>
+      </div>
+      </div>
+      <div>
+      </div>
+    </div>
+</div>
+</div>
+    
+<div class="d-sm-block d-none">
+<div id="overlaysm" onclick="offsm()">
+  <div class="card translatecardsm" id="textsm">
+    <div class="row ml-5 mr-5 text-center">
+      <div>
+          <h5 class="text-center">Select a language to translate the webpage</h5>
+          <p class="text-center">You will be directed to Google Translate</p>
+          <br>
+      </div>
+    </div>
+    <div class="row ml-5">
+      <div class="col-sm">
+          <a href="http://translate.google.com/translate?hl=en&sl=en&u=https://cityofgainesville.github.io/designGNV/about&tl=es" target="_blank">Spanish</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=fr&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F&sandbox=1" target="_blank">French</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=zh-CN&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Chinese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=de&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">German</a> <br><br><br>
+      </div>
+      <div class="col-sm">
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=de&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">German</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=pt&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Portuguese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=vi&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Vietnamese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=it&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Italian</a> <br><br><br>
+      </div>
+      <div class="col-sm">
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=th&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Thai</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ru&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Russian</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ja&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Japanese</a> <br><br>
       </div>
       </div> 
     </div>
 </div>
-
+</div>
 
     
 <br>    
 <div class="row container-fluid">
             <div class="col-sm"></div>
-            <div class="col-sm-6"><img class="d-block img-fluid" src="img/welcomeslide.png"  alt="First slide"></div>
+            <div class="col-sm-8"><img class="d-block img-fluid" src="img/welcomeslide.png"  alt="First slide"></div>
             <div class="col-sm"></div>
 </div>
     
@@ -474,7 +581,7 @@ function off() {
 <div class="row container-fluid">
         <div class="col-sm"></div>
         <div class="col-sm-6">
-        <div class="h-100 text-dark text-left">
+        <div class="h-100 text-dark text-left" style="font-size: 22px">
           <p class="text-left">DesignGNV is a community open to all neighbors who want to transform Gainesville! Together we explore, design and improve our local government and neighborhoods.</p>
             <br>
           <p class="text-left">We aspire to be a diverse community represented by all race, nationality, gender, ability, ideology and skills. Join us!</p>
@@ -486,7 +593,8 @@ function off() {
     
 <br>
     
-<hr width="75%">
+    
+<div class="current_projects">
     
 <br><br>
     
@@ -498,12 +606,12 @@ function off() {
 <!-- Current Projects -->
 <!-- Large Devices -->
     
-<div class="d-none d-lg-block">
-<div class=" m-0">
-    <div class="row ml-5 mr-5">
+<div class="d-none d-xl-block">
+<div class="ml-5 mr-5">
+    <div class="row ml-5 mr-5 project_card">
         <div class="col-sm-1"></div>
-        <div class="col-sm-5 esther_yellow_bg">
-            <br>
+        <div class="col-sm-5 project_card">
+            <br><br>
           <h4 class="text-left">City of Gainesville Website Feedback </h4>
             <br>
           <h6 class="text left gray_text">About the Project</h6>
@@ -512,33 +620,35 @@ function off() {
           <h6 class="text left gray_text">How to Participate</h6>
           <p class="text-left">This survey should take 5 minutes to complete.<p>        
             <br>
-          <a class="btn btn-info align-bottom text-light" style="vertical-align: bottom" href="http://www.cityofgainesville.org/" target="_blank">
+          <a class="btn btn-more align-bottom" style="vertical-align: bottom" href="http://www.cityofgainesville.org/" target="_blank">
 						<span>City of Gainesville Website</span>
 	  			      </a>
             <a class="btn btn-participate align-bottom" style="vertical-align: bottom" href="https://forms.gle/GcFrcomXC1XRi91r7" target="_blank">
 						<span>Submit Feedback</span>
 	  			      </a>
-            <br>
+            <br><br>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-4">
+            <br><br>
           <img src="img/project1.png" class="img-fluid">
         </div>
         <div class="col-sm-1"></div>
     </div> 
     </div>
 
+<br><br>
 
-
-<div class=" m-0">
-    <div class="row ml-5 mr-5">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-5">
-            <br><br>
+<div class="ml-5 mr-5">
+    <div class="row ml-5 mr-5 project_card">
+        
+        <div class="col-sm-6">
+            <br><br><br>
           <img src="img/project2.png" class="img-fluid">
         </div>
-        <div class="col-sm-5 esther_yellow_bg">
-            <br>
+        
+        <div class="col-sm-5  ml-3 project_card">
+            <br><br>
           <h4 class="text-left">Welcome to Gainesville Webpage</h4>
             <br>
           <h6 class="text left gray_text">About the Project</h6>
@@ -547,24 +657,25 @@ function off() {
           <h6 class="text left gray_text">How to Participate</h6>
           <p class="text-left">Take a look at our new WelcomeGNV page. If you are new to Gainesville, tell us what else you would like to know. If you are a Gainesvillian, what else whould we share with new residents? <p>        
             <br>
-          <a class="btn btn-info align-bottom text-light" style="vertical-align: bottom" href="https://cityofgainesville.github.io/welcomeGNV/" target="_blank">
+          <a class="btn btn-more align-bottom" style="vertical-align: bottom" href="https://cityofgainesville.github.io/welcomeGNV/" target="_blank">
 						<span>Explore welcomeGNV</span>
 	  			      </a>
             <a class="btn btn-participate align-bottom" style="vertical-align: bottom" href="https://cityofgainesville.iad1.qualtrics.com/jfe/form/SV_81BjX47Ow1PhnkF" target="_blank">
 						<span>Submit Feedback</span>
 	  			      </a>
-            <br>
+            <br><br>
         </div>
         <div class="col-sm-1"></div>
     </div> 
     </div>
     
+<br><br>
     
-<div class="m-0 ">
-    <div class="row ml-5 mr-5">
+<div class="ml-5 mr-5">
+    <div class="row ml-5 mr-5 project_card">
         <div class="col-sm-1"></div>
-        <div class="col-sm-5 esther_yellow_bg">
-            <br>
+        <div class="col-sm-5 project_card">
+        <br>
           <h4 class="text-left">Open Data Portal</h4>
             <br>
           <h6 class="text left gray_text">About the Project</h6>
@@ -573,27 +684,27 @@ function off() {
           <h6 class="text left gray_text">How to Participate</h6>
           <p class="text-left">Check out statGNV and let us know what we should improve!<p>        
             <br>
-          <a class="btn btn-info align-bottom text-light" style="vertical-align: bottom" href="https://stat.cityofgainesville.org/index.html" target="_blank">
+          <a class="btn btn-more align-bottom" style="vertical-align: bottom" href="https://stat.cityofgainesville.org/index.html" target="_blank">
 						<span>Explore statGNV</span>
 	  			      </a>
             <br>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-6">
             <br>
           <img src="img/project3.png" class="img-fluid">
         </div>
-        <div class="col-sm-1"></div>
     </div> 
     </div>    
  
-<div class=" m-0">
-    <div class="row ml-5 mr-5">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-5">
-            <br><br>
+    <br><br>
+    
+<div class="ml-5 mr-5">
+    <div class="row ml-5 mr-5 project_card">
+        <div class="col-sm-6">
+          <br><br>  
           <img src="img/project4.png" class="img-fluid">
         </div>
-        <div class="col-sm-5 esther_yellow_bg">
+        <div class="col-sm-5 ml-3 project_card">
             <br>
             <h4 class="text-left">Join the Code 4 Gainesville Brigade!</h4>
             <br>
@@ -603,28 +714,29 @@ function off() {
           <h6 class="text left gray_text">How to Participate</h6>
           <p class="text-left">Are you a community organizer, designer or developer? Do you want to work towards solving some of Gainesville’s pressing challenges? Are you excited to meet and collaborate with other change makers? <br><br> We invite you to the Code 4 Gainesville brigade!<p>        
             <br>
-          <a class="btn btn-info align-bottom text-light" style="vertical-align: bottom" href="" target="_blank">
+          <a class="btn btn-participate align-bottom" style="vertical-align: bottom" href="" target="_blank">
 						<span>Sign Up Here</span>
 	  			      </a>
+            <br><br>
         </div>
         <div class="col-sm-1"></div>
     </div> 
     </div>
     </div>
 <!-- End Large Devices -->
-       
     
-<!-- Small Devices -->
-<div class="d-xs-block d-lg-none">    
-    <div class="container-fluid m-0">
+    
+<!-- Medium Devices -->
+<div class="d-xs-none d-sm-block d-xl-none">    
+    <div class="container-fluid">
     <div class="row ml-5 mr-5">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-4">
+        <div classs="col-sm-2"></div>
+        <div class="col-sm-8 project_card">
           <img src="img/project1.png" class="img-fluid">
-            <br><br>
         </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-5 esther_yellow_bg">
+        </div>
+    <div class="row ml-5 mr-5">
+        <div class="col-sm-8 project_card">
             <br>
           <h4 class="text-left">City of Gainesville Website Feedback </h4>
             <br>
@@ -634,7 +746,134 @@ function off() {
           <h6 class="text left gray_text">How to Participate</h6>
           <p class="text-left">This survey should take 5 minutes to complete.<p>        
             <br>
-          <a class="btn btn-info align-bottom text-light" style="vertical-align: bottom" href="http://www.cityofgainesville.org/" target="_blank">
+          <a class="btn btn-more align-bottom" style="vertical-align: bottom" href="http://www.cityofgainesville.org/" target="_blank">
+						<span>City of Gainesville Website</span>
+	  			      </a>
+            <a class="btn btn-participate align-bottom" style="vertical-align: bottom" href="https://forms.gle/GcFrcomXC1XRi91r7" target="_blank">
+						<span>Submit Feedback</span>
+	  			      </a>
+            <br>
+        </div>
+    </div> 
+    </div>
+    
+    <br><br>
+
+
+
+<div class="container-fluid m-0">
+    <div class="row ml-5 mr-5">
+        <div class="col-sm-8 project_card">
+            <br><br>
+          <img src="img/project2.png" class="img-fluid">
+            <br><br>
+        </div>
+    </div>
+    <div class="row ml-5 mr-5">
+        <div class="col-sm-8 project_card">
+            <br>
+          <h4 class="text-left">Welcome to Gainesville Webpage</h4>
+            <br>
+          <h6 class="text left gray_text">About the Project</h6>
+          <p class="text-left">How can we help our new neighbors move to Gainesville? WelcomeGNV is a resource for our new neighbors to explore everything that Gainesville has to offer.</p>        
+            <br>
+          <h6 class="text left gray_text">How to Participate</h6>
+          <p class="text-left">Take a look at our new WelcomeGNV page. If you are new to Gainesville, tell us what else you would like to know. If you are a Gainesvillian, what else whould we share with new residents? <p>        
+            <br>
+          <a class="btn btn-more align-bottom" style="vertical-align: bottom" href="https://cityofgainesville.github.io/welcomeGNV/" target="_blank">
+						<span>Explore welcomeGNV</span>
+	  			      </a>
+            <a class="btn btn-participate align-bottom" style="vertical-align: bottom" href="https://cityofgainesville.iad1.qualtrics.com/jfe/form/SV_81BjX47Ow1PhnkF" target="_blank">
+						<span>Submit Feedback</span>
+	  			      </a>
+            <br>
+        </div>
+    </div> 
+    </div>
+    
+    <br><br>
+    
+<div class="container-fluid m-0 ">
+    <div class="row ml-5 mr-5">
+        <div class="col-sm-8 project_card">
+            <br>
+          <img src="img/project3.png" class="img-fluid">
+            <br><br>
+        </div>
+    </div>
+    <div class="row ml-5 mr-5">
+        <div class="col-sm-8 project_card">
+            <br>
+          <h4 class="text-left">Open Data Portal</h4>
+            <br>
+          <h6 class="text left gray_text">About the Project</h6>
+          <p class="text-left">How can we simplify our community data and open it up for everyone? StatGNV lets you explore the City of Gainesville's data through interactive charts, graphs, and maps. You can now easily understand complex city data and track important trends in areas such as public safety, basic city services, human services, economic development, and others.</p>        
+            <br>
+          <h6 class="text left gray_text">How to Participate</h6>
+          <p class="text-left">Check out statGNV and let us know what we should improve!<p>        
+            <br>
+          <a class="btn btn-more align-bottom" style="vertical-align: bottom" href="https://stat.cityofgainesville.org/index.html" target="_blank">
+						<span>Explore statGNV</span>
+	  			      </a>
+            <br>
+        </div>
+    </div> 
+    </div>  
+    
+    <br><br>
+ 
+<div class="container-fluid m-0">
+    <div class="row ml-5 mr-5">
+        <div class="col-sm-8 project_card">
+            <br><br>
+          <img src="img/project4.png" class="img-fluid">
+            <br><br>
+        </div>
+    </div>
+    <div class="row ml-5 mr-5">
+        <div class="col-sm-8 project_card">
+            <br>
+            <h4 class="text-left">Join the Code 4 Gainesville Brigade!</h4>
+            <br>
+          <h6 class="text left gray_text">About the Project</h6>
+          <p class="text-left">Code for America is a national non-profit that supports civic coding.</p>        
+            <br>
+          <h6 class="text left gray_text">How to Participate</h6>
+          <p class="text-left">Are you a community organizer, designer or developer? Do you want to work towards solving some of Gainesville’s pressing challenges? Are you excited to meet and collaborate with other change makers? <br><br> We invite you to the Code 4 Gainesville brigade!<p>        
+            <br>
+          <a class="btn btn-participate align-bottom" style="vertical-align: bottom" href="" target="_blank">
+						<span>Sign Up Here</span>
+	  			      </a>
+        </div>
+    </div> 
+    </div> 
+            
+            
+</div>
+    
+<!-- End Medium Devices -->
+
+       
+    
+<!-- Small Devices -->
+<div class="d-xs-block d-none">    
+    <div class="container-fluid m-0">
+    <div class="row ml-5 mr-5">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4 project_card">
+          <img src="img/project1.png" class="img-fluid">
+        </div>
+        <div class="col-sm-5 project_card">
+            <br>
+          <h4 class="text-left">City of Gainesville Website Feedback </h4>
+            <br>
+          <h6 class="text left gray_text">About the Project</h6>
+          <p class="text-left">The City of Gainesville is starting a new website redesign project. This survey helps us understand your experience with the current City of Gainesville website.</p>        
+            <br>
+          <h6 class="text left gray_text">How to Participate</h6>
+          <p class="text-left">This survey should take 5 minutes to complete.<p>        
+            <br>
+          <a class="btn btn-more align-bottom" style="vertical-align: bottom" href="http://www.cityofgainesville.org/" target="_blank">
 						<span>City of Gainesville Website</span>
 	  			      </a>
             <a class="btn btn-participate align-bottom" style="vertical-align: bottom" href="https://forms.gle/GcFrcomXC1XRi91r7" target="_blank">
@@ -645,18 +884,20 @@ function off() {
         <div class="col-sm-1"></div>
     </div> 
     </div>
+    
+    <br><br>
 
 
 
 <div class="container-fluid m-0">
     <div class="row ml-5 mr-5">
         <div class="col-sm-1"></div>
-        <div class="col-sm-5">
+        <div class="col-sm-5 project_card">
             <br><br>
           <img src="img/project2.png" class="img-fluid">
             <br><br>
         </div>
-        <div class="col-sm-5 esther_yellow_bg">
+        <div class="col-sm-5 project_card">
             <br>
           <h4 class="text-left">Welcome to Gainesville Webpage</h4>
             <br>
@@ -666,7 +907,7 @@ function off() {
           <h6 class="text left gray_text">How to Participate</h6>
           <p class="text-left">Take a look at our new WelcomeGNV page. If you are new to Gainesville, tell us what else you would like to know. If you are a Gainesvillian, what else whould we share with new residents? <p>        
             <br>
-          <a class="btn btn-info align-bottom text-light" style="vertical-align: bottom" href="https://cityofgainesville.github.io/welcomeGNV/" target="_blank">
+          <a class="btn btn-more align-bottom" style="vertical-align: bottom" href="https://cityofgainesville.github.io/welcomeGNV/" target="_blank">
 						<span>Explore welcomeGNV</span>
 	  			      </a>
             <a class="btn btn-participate align-bottom" style="vertical-align: bottom" href="https://cityofgainesville.iad1.qualtrics.com/jfe/form/SV_81BjX47Ow1PhnkF" target="_blank">
@@ -678,16 +919,17 @@ function off() {
     </div> 
     </div>
     
+    <br><br>
     
 <div class="container-fluid m-0 ">
     <div class="row ml-5 mr-5">
         <div class="col-sm-1"></div>
-        <div class="col-sm-5">
+        <div class="col-sm-5 project_card">
             <br>
           <img src="img/project3.png" class="img-fluid">
             <br><br>
         </div>
-        <div class="col-sm-5 esther_yellow_bg">
+        <div class="col-sm-5 project_card">
             <br>
           <h4 class="text-left">Open Data Portal</h4>
             <br>
@@ -697,24 +939,26 @@ function off() {
           <h6 class="text left gray_text">How to Participate</h6>
           <p class="text-left">Check out statGNV and let us know what we should improve!<p>        
             <br>
-          <a class="btn btn-info align-bottom text-light" style="vertical-align: bottom" href="https://stat.cityofgainesville.org/index.html" target="_blank">
+          <a class="btn btn-more align-bottom" style="vertical-align: bottom" href="https://stat.cityofgainesville.org/index.html" target="_blank">
 						<span>Explore statGNV</span>
 	  			      </a>
             <br>
         </div>
         <div class="col-sm-1"></div>
     </div> 
-    </div>    
+    </div>  
+    
+    <br><br>
  
 <div class="container-fluid m-0">
     <div class="row ml-5 mr-5">
         <div class="col-sm-1"></div>
-        <div class="col-sm-5">
+        <div class="col-sm-5 project_card">
             <br><br>
           <img src="img/project4.png" class="img-fluid">
             <br><br>
         </div>
-        <div class="col-sm-5 esther_yellow_bg">
+        <div class="col-sm-5 project_card">
             <br>
             <h4 class="text-left">Join the Code 4 Gainesville Brigade!</h4>
             <br>
@@ -724,7 +968,7 @@ function off() {
           <h6 class="text left gray_text">How to Participate</h6>
           <p class="text-left">Are you a community organizer, designer or developer? Do you want to work towards solving some of Gainesville’s pressing challenges? Are you excited to meet and collaborate with other change makers? <br><br> We invite you to the Code 4 Gainesville brigade!<p>        
             <br>
-          <a class="btn btn-info align-bottom text-light" style="vertical-align: bottom" href="" target="_blank">
+          <a class="btn btn-participate align-bottom" style="vertical-align: bottom" href="" target="_blank">
 						<span>Sign Up Here</span>
 	  			      </a>
         </div>
@@ -736,8 +980,12 @@ function off() {
 </div>
     
 <!-- End Small Devices -->
+
+    <br><br>
     
-<br><br>
+</div>
+    
+<br>
     
 <!--Footer-->      
     <nav class="navbar navbar-expand-lg">
