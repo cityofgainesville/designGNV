@@ -220,6 +220,26 @@ a:visited{
     color: white;
     }
     
+.translatecard {
+    background-color: white; 
+    width: 50%;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    }
+    
+.translatebutton {
+    padding-top: 8px;
+    cursor: pointer;
+    background-color: white;
+    color: black; 
+    border: none;
+    }
+    
+.translatenav {
+    cursor: pointer
+    }
+    
 #navbar {
   min-height: 48px;
   background-color: #fff;
@@ -257,12 +277,50 @@ a:visited{
 
 nav-link {
     background: none;    
-    }    
+    }   
+    
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  color: #005ea2;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  background-color: white;
+
+}
     
 
 </style>
     
 <!-- End CSS edits. -->
+    
+<script>
+        
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+    
+</script>
 
 
     
@@ -276,9 +334,6 @@ nav-link {
 <!-- This is where the temporary blue bar ends and the site's navbar starts: -->
 <nav class="navbar border-bottom border-info navbar-expand-lg">
 <a href="index.html"><img src="img/logo-main.png" width="200rem"  class="img-fluid"></a>
-<button class="navbar-toggler" type="button" data-target="#main_nav">
-    <span class="navbar-toggler-icon"></span>
-</button>
 <div id="main_nav">
 
 <ul class="navbar-nav">
@@ -288,13 +343,42 @@ nav-link {
 <li class="nav-item">
         <a class="nav-link" href="about.html">About DesignGNV</a>
       </li>
+    <li class="nav-item">
+    <a class="nav-link translatenav ml-auto" onclick="on()" >Translate</a>
+</li>
 </ul>
 
-</div> <!-- navbar-collapse.// -->
+
+
+</div>
 </nav>
 <!-- This is where the site's navbar ends. -->
+    
 
-<br><br><br>
+    <!-- Trigger/Open The Modal -->
+<div id="overlay" onclick="off()">
+  <div class="card translatecard" id="text">
+    <div class="row ml-5 mr-5">
+      <div class="col-sm">
+          <a href="http://translate.google.com/translate?hl=en&sl=en&u=https://cityofgainesville.github.io/designGNV/&tl=es" target="_blank">Spanish</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=fr&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F&sandbox=1" target="_blank">French</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=zh-CN&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Chinese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=de&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">German</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=pt&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Portuguese</a> <br><br>
+      </div>
+      <div class="col-sm">
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=vi&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Vietnamese</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=it&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Italian</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=th&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Thai</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ru&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Russian</a> <br><br>
+          <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ja&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">Japanese</a> <br><br>
+      </div>
+      </div> 
+    </div>
+</div>
+<!-- Modal Ends -->
+
+<br><br>
     
 <div class="container-fluid m-0 bg-section1">   
     <br><br>
