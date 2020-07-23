@@ -249,43 +249,6 @@ a:visited{
     color: black;
     }
     
-    
-.translatecard {
-    background-color: white; 
-    width: 40%;
-    height: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    }
-    
-.translatecardsm {
-    background-color: white; 
-    width: 85%;
-    height: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    }
-    
-.translatecardxs {
-    background-color: white; 
-    width: 95%;
-    height: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    }
-    
-.translatebutton {
-    padding-top: 8px;
-    cursor: pointer;
-    background-color: white;
-    color: black; 
-    border: none;
-    }
-    
-.translatenav {
-    cursor: pointer;
-    color: #8168b3 !important; 
-    }
 
     
 #navbar {
@@ -366,6 +329,49 @@ nav-link {
 	}
 }
 
+.translatecard {
+    background-color: white; 
+    width: 40%;
+    height: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    }
+    
+.translatecardsm {
+    background-color: white; 
+    width: 85%;
+    height: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    }
+    
+.translatecardxs {
+    background-color: white; 
+    width: 95%;
+    height: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    }
+    
+.translatebutton {
+    padding-top: 8px;
+    cursor: pointer;
+    background-color: white;
+    color: black; 
+    border: none;
+    }
+    
+.translatenav {
+    cursor: pointer;
+    color: #8168b3 !important; 
+    }    
+    
 #overlay {
   position: fixed;
   display: none;
@@ -539,14 +545,17 @@ function offxs() {
 <div class="d-none d-md-block">
 <div id="overlay" onclick="off()">
   <div class="card translatecard" id="text">
-    <div class="row ml-3 mr-3 text-center">
+      <div class="text-right mr-5">
+          <i class="fal fa-times"></i>
+      </div>
+    <div class="row ml-5 mr-5 text-center">
       <div>
           <h4 class="text-center">Webpage Translator</h4>
-          <p class="text-center" style="color: black !important; font-size: 16px">Select a language, a new tab will open with a Google Translated page</p>
+          <p class="text-center" style="color: black !important; font-size: 16px">Select a language. <br> A new tab will open with a Google Translated page.</p>
           <br>
       </div>
     </div>
-    <div class="row ml-5">
+    <div class="row ml-5 mr-5">
       <div class="col-sm">
           <a href="http://translate.google.com/translate?hl=en&sl=en&u=https://cityofgainesville.github.io/designGNV/&tl=es" target="_blank">Español</a> <br><br>
           <a href="http://translate.google.com/translate?hl=en&sl=en&tl=fr&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F&sandbox=1" target="_blank">Français</a> <br><br>
@@ -570,8 +579,10 @@ Tiếng Việt</a> <br><br>
           <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ja&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">日本人</a> <br><br>
           <a href="disclaimer.html" target="_blank" style="color: black">Disclaimer</a>
       </div>
-        
       </div> 
+      <div class="text-center">
+        <a href="https://cityofgainesville.typeform.com/to/jLHcWnVU" target="_blank" class="text-center" style="color: black !important; font-size: 16px">Request a language</a>
+      </div>
       <div>
       </div>
     </div>
@@ -581,10 +592,13 @@ Tiếng Việt</a> <br><br>
 <div class="d-none d-sm-block d-md-none">
 <div id="overlaysm" onclick="offsm()">
   <div class="card translatecardsm" id="textsm">
+      <div class="text-right mr-5">
+          <i class="fal fa-times"></i>
+      </div>
     <div class="row ml-3 mr-3 text-center">
       <div>
           <h4 class="text-center">Webpage Translator</h4>
-          <p class="text-center" style="color: black !important; font-size: 16px">Select a language, a new tab will open with a Google Translated page</p>
+          <p class="text-center" style="color: black !important; font-size: 16px">Select a language. <br> A new tab will open with a Google Translated page</p>
           <br>
       </div>
     </div>
@@ -612,7 +626,10 @@ Tiếng Việt</a> <br><br>
           <a href="http://translate.google.com/translate?hl=en&sl=en&tl=ja&u=https%3A%2F%2Fcityofgainesville.github.io%2FdesignGNV%2F" target="_blank">日本人</a> <br><br>
           <a href="disclaimer.html" target="_blank" style="color: black">Disclaimer</a>
       </div>
-      </div> 
+      </div>
+      <div class="text-center">
+        <a href="https://cityofgainesville.typeform.com/to/jLHcWnVU" target="_blank" class="text-center" style="color: black !important; font-size: 16px">Request a language</a>
+      </div>
     </div>
 </div>
 </div>
@@ -620,10 +637,13 @@ Tiếng Việt</a> <br><br>
 <div class="d-block d-sm-none">
 <div id="overlayxs" onclick="offxs()">
   <div class="card translatecardxs" id="textxs">
+      <div class="text-right mr-5">
+          <i class="fal fa-times"></i>
+      </div>
     <div class="row ml-3 mr-3 text-center">
       <div>
           <h4 class="text-left">Webpage Translator</h4>
-          <p class="text-left" style="color: black !important; font-size: 16px">Select a language, a new tab will open with a Google Translated page</p>
+          <p class="text-left" style="color: black !important; font-size: 16px">Select a language. <br> A new tab will open with a Google Translated page</p>
       </div>
     </div>
     <div class="row ml-5">
@@ -647,6 +667,9 @@ Tiếng Việt</a> <br>
           <a href="disclaimer.html" target="_blank" style="color: black">Disclaimer</a>
       </div>
       </div> 
+      <div class="text-center">
+        <a href="https://cityofgainesville.typeform.com/to/jLHcWnVU" target="_blank" class="text-center" style="color: black !important; font-size: 16px">Request a language</a>
+      </div>
     </div>
 </div>
 </div>
@@ -677,7 +700,7 @@ Tiếng Việt</a> <br>
                 <br><br>  
                  Tell us what you think!
                   <br><br>
-                <button class="btn btn-signup" href="https://cityofgainesville.typeform.com/to/hu5Mcz">Sign up today!</button>
+                <a class="btn btn-participate" style="width: 9rem" href="https://cityofgainesville.typeform.com/to/hu5Mcz" target="_blank">Sign up today!</a>
                 </p>
               </div>
         <div class="col-sm text-center"></div>
